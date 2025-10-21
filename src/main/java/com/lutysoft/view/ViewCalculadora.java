@@ -1,7 +1,7 @@
-package com.luysoft.view;
+package com.lutysoft.view;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
+import com.lutysoft.controller.ControlerCalculadora;
 
 public class ViewCalculadora extends JFrame {
     private JPanel Janela;
@@ -22,6 +22,8 @@ public class ViewCalculadora extends JFrame {
     private JButton bDividir;
     private JButton bZero;
     private JButton bMais;
+    private JButton bIgual;
+    private ControlerCalculadora controlerCalculadora;
 
     public ViewCalculadora() {
         // Configurações da janela
@@ -31,10 +33,26 @@ public class ViewCalculadora extends JFrame {
         setSize(400, 300); // Tamanho da janela
         setLocationRelativeTo(null); // Centraliza na tela
         setVisible(true);
+        this.controlerCalculadora = new ControlerCalculadora(this);
 
     }
 
-
+    public void events(){
+        bUm.addActionListener(controlerCalculadora);
+        bDois.addActionListener(controlerCalculadora);
+        bTres.addActionListener(controlerCalculadora);
+        bQuatro.addActionListener(controlerCalculadora);
+        bCinco.addActionListener(controlerCalculadora);
+        bSeis.addActionListener(controlerCalculadora);
+        bSete.addActionListener(controlerCalculadora);
+        bOito.addActionListener(controlerCalculadora);
+        bNove.addActionListener(controlerCalculadora);
+        bZero.addActionListener(controlerCalculadora);
+        bMais.addActionListener(controlerCalculadora);
+        bMenos.addActionListener(controlerCalculadora);
+        bDividir.addActionListener(controlerCalculadora);
+        bMultiplicar.addActionListener(controlerCalculadora);
+    }
 
     public static void main(String[] args) {
         new ViewCalculadora();

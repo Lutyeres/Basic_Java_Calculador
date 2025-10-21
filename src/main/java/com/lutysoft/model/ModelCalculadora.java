@@ -1,4 +1,4 @@
-package com.lutysoft.com.lutysoft.model;
+package com.lutysoft.model;
 
 public class ModelCalculadora {
 
