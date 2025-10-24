@@ -32,6 +32,35 @@ public class ControlerCalculadora implements ActionListener {
         viewCalculadora.gettResultado().setText(result);
    }
 
+   public void apagar(){
+        String tValor01Temp = viewCalculadora.gettValor01().getText();
+        String tValor02Temp = viewCalculadora.gettValor02().getText();
+        String lOperadorTemp = viewCalculadora.getlOperador().getText();
+        String tResultadoTemp = viewCalculadora.gettResultado().getText();
+
+        try {
+            if (!tResultadoTemp.isEmpty()) {
+                viewCalculadora.gettResultado().setText("");
+            } else if (!tValor02Temp.isEmpty()) {
+                viewCalculadora.gettValor02().setText(tValor02Temp.substring(0, tValor02Temp.length() - 1));
+            } else if (!lOperadorTemp.isEmpty()) {
+                viewCalculadora.getlOperador().setText(lOperadorTemp.substring(0, lOperadorTemp.length() - 1));
+            } else {
+                viewCalculadora.gettValor01().setText(tValor01Temp.substring(0, tValor01Temp.length() - 1));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Não existe mais caracteres para apagar", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
+   }
+
+   public void apagarTudo(){
+
+        viewCalculadora.gettValor01().setText("");
+        viewCalculadora.gettValor02().setText("");
+        viewCalculadora.getlOperador().setText("");
+        viewCalculadora.gettResultado().setText("");
+   }
+
 
     public int somar(int a , int b){
         return a + b;
@@ -53,14 +82,8 @@ public class ControlerCalculadora implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String bAcaoComando = e.getActionCommand().toLowerCase();
-        Set<String> operadores = Set.of("+", "-", "*", "/");
-        Set<String> apagar = Set.of("<", "CE");
-
-        if(apagar.contains(bAcaoComando)){
-            if(bAcaoComando.equals("<")){
-                
-            }
-        }
+        Set<String> operadores = Set.of("+", "-", "x", "/");
+        Set<String> apagar = Set.of("<", "ce");
 
         if (operadores.contains(bAcaoComando)) {
             viewCalculadora.getlOperador().setText(bAcaoComando);
@@ -82,7 +105,7 @@ public class ControlerCalculadora implements ActionListener {
                     break;
                     case "-": resultado(subtrair(calcModelTemp.getValor01(), calcModelTemp.getValor02()));
                     break;
-                    case "*": resultado(multiplicar(calcModelTemp.getValor01(), calcModelTemp.getValor02()));
+                    case "x": resultado(multiplicar(calcModelTemp.getValor01(), calcModelTemp.getValor02()));
                     break;
                     case "/": resultado(dividir(calcModelTemp.getValor01(), calcModelTemp.getValor02()));
                     break;
@@ -93,6 +116,13 @@ public class ControlerCalculadora implements ActionListener {
             }
 
 
+        }else if(apagar.contains(bAcaoComando)){
+            switch (bAcaoComando){
+                case "<" : apagar();
+                    break;
+                case "ce" : apagarTudo();
+                    break;
+            }
         } else {
             // caso seja número, adicionar ao JTextField focado
             adicionar(bAcaoComando);

@@ -65,6 +65,8 @@ public class ViewCalculadora extends JFrame {
         bDividir.addActionListener(controlerCalculadora);
         bMultiplicar.addActionListener(controlerCalculadora);
         bIgual.addActionListener(controlerCalculadora);
+        bApagar.addActionListener(controlerCalculadora);
+        bApagarTudo.addActionListener((controlerCalculadora));
     }
 
     public JTextField gettValor01() {
