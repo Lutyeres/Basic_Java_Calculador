@@ -5,6 +5,10 @@ public class ModelCalculadora {
     private int valor01;
     private int valor02;
 
+    public ModelCalculadora(){
+
+    }
+
     public ModelCalculadora(int valor01, int valor02) {
         this.valor01 = valor01;
         this.valor02 = valor02;
@@ -25,4 +29,5 @@ public class ModelCalculadora {
     public void setValor02(int valor02) {
         this.valor02 = valor02;
     }
+
 }
