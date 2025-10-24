@@ -95,10 +95,6 @@ public class ViewCalculadora extends JFrame {
         return null;
     }
 
-    public static void main(String[] args) {
-        new ViewCalculadora();
-    }
-
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
