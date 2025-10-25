@@ -3,20 +3,20 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\55629\OneDrive\Documentos\GAROTO_DE_PROGRAMA\Calculadora\out\artifacts\Calculadora_jar\Calculadora.jar</jar>
-  <outfile>C:\Users\55629\OneDrive\Documentos\GAROTO_DE_PROGRAMA\Calculadora\Calculadora.exe</outfile>
+  <outfile>C:\Users\55629\OneDrive\Documentos\GAROTO_DE_PROGRAMA\Calculadora\CalculadoraJava.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
   <downloadUrl></downloadUrl>
   <supportUrl></supportUrl>
-  <stayAlive>true</stayAlive>
+  <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
   <icon>C:\Users\55629\OneDrive\Documentos\GAROTO_DE_PROGRAMA\Calculadora\icon.ico</icon>
   <jre>
     <path>%JAVA_HOME%;%PATH%</path>
-    <requiresJdk>false</requiresJdk>
+    <requiresJdk>true</requiresJdk>
     <requires64Bit>false</requires64Bit>
     <minVersion>17</minVersion>
     <maxVersion></maxVersion>

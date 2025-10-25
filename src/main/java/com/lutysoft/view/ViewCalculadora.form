@@ -29,7 +29,7 @@
             <properties>
               <columns value="0"/>
               <editable value="true"/>
-              <focusable value="false"/>
+              <focusable value="true"/>
               <font size="22"/>
               <horizontalAlignment value="4"/>
               <text value=""/>
@@ -42,7 +42,7 @@
               </grid>
             </constraints>
             <properties>
-              <focusable value="false"/>
+              <focusable value="true"/>
               <font size="22"/>
               <horizontalAlignment value="4"/>
             </properties>
